@@ -2,6 +2,8 @@ package android.saied.com.koinandroidtestinject
 
 import androidx.lifecycle.ViewModel
 
-const val REAL_CONTENT = "Real Content"
+class ContentGetter(val content: String = "Real Content")
 
-class MainViewModel(val content: String = REAL_CONTENT) : ViewModel()
+class MainViewModel(private val contentGetter: ContentGetter) : ViewModel() {
+    fun getContent() = contentGetter.content
+}

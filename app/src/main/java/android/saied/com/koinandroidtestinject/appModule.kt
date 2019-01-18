@@ -5,6 +5,6 @@ import org.koin.dsl.module.module
 
 val appModule = module {
     viewModel {
-        MainViewModel()
+        MainViewModel(ContentGetter())
     }
 }
